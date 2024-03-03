@@ -89,7 +89,7 @@ def test_img_poison(net_g, data, target, args, numpoison, numepoch):
             original_acc = 17.73
             original_loss = 2.3
             threshold = 0.03
-            if args.dp_epsilon <= 30:
+            if args.dp_epsilon >= 5:
                 if low_idx >= l - numpoison:
                     for (one_img, one_label) in zip(data_cut, target_cut.cpu().numpy()):
                         one_img = one_img.cpu()
